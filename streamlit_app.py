@@ -14,7 +14,7 @@ df = pd.read_csv(file_path)
 # Features and target variable
 X = df[['num_bedrooms', 'num_bathrooms', 'square_footage', 'age_of_house']]
 y = df[['house_price']]  # Assuming the target column is named 'price'
-
+print(df)
 # Split the data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
@@ -38,7 +38,7 @@ def predict_price(bedrooms, bathrooms, square_footage, age):
     return price
 
 # Streamlit app
-st.title('House Price Prediction')
+st.title(' House Price Prediction Page ')
 
 # Input fields
 bedrooms = st.number_input('Enter the number of bedrooms:', min_value=1, max_value=10, value=3)
@@ -50,3 +50,12 @@ age = st.number_input('Enter the age of the house:', min_value=0, max_value=100,
 if st.button('Predict House Price'):
     price = predict_price(bedrooms, bathrooms, square_footage, age)
     st.write(f'Predicted House Price: ${price}')
+
+def plot_sales_data(dates, sales_data):
+    plt.figure(figsize=(10, 6))
+    plt.plot(dates, sales_data, marker='o', linestyle='-')
+    plt.xlabel('Date')
+    plt.ylabel('Sales')
+    plt.title('Sales Over Time')
+    plt.xticks(rotation=45)
+    return plt
