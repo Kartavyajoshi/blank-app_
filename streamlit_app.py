@@ -69,21 +69,3 @@ def plot_data(x, y):
     plt.title('Simple Plot')
     plt.legend()
     return plt
-
-def main():
-
-# plt.bar(df["num_bedrooms"].values.count,df["num_bedrooms"])
-    room=df["num_bedrooms"].tolist()
-    room_count=[]
-    for i in range(1,max(room)+1):
-       room_count.append(room.count(i))
-
-    room=[]
-    room.extend(range(1,max(df["num_bedrooms"].tolist())+1))
-    plt.bar(room,room_count,color="green")
-    plt.xlabel("Number of rooms")
-    plt.ylabel("Total Availabe Property")
-    plt.title("Property's with available rooms")
-    plt.show()
-if __name__ == 'streamlit_app.py':
-    main()
