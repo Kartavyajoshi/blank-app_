@@ -7,7 +7,7 @@ import streamlit as st
 import numpy as np
 
 # Load the dataset
-file_path = './data/house_price_prediction.csv'
+file_path = '.house_price_prediction.csv'
 df = pd.read_csv(file_path)
 
 
