@@ -5,6 +5,7 @@ from sklearn.metrics import mean_squared_error
 import joblib
 import streamlit as st
 import numpy as np
+import matplotlib.pyplot as plt
 
 # Load the dataset
 file_path = './house_price_prediction.csv'
@@ -59,3 +60,30 @@ def plot_sales_data(dates, sales_data):
     plt.title('Sales Over Time')
     plt.xticks(rotation=45)
     return plt
+def plot_data(x, y):
+    # Plot data using Matplotlib
+    plt.figure(figsize=(8, 6))
+    plt.plot(x, y, label='sin(x)')
+    plt.xlabel('x')
+    plt.ylabel('sin(x)')
+    plt.title('Simple Plot')
+    plt.legend()
+    return plt
+
+def main():
+
+# plt.bar(df["num_bedrooms"].values.count,df["num_bedrooms"])
+    room=df["num_bedrooms"].tolist()
+    room_count=[]
+    for i in range(1,max(room)+1):
+       room_count.append(room.count(i))
+
+    room=[]
+    room.extend(range(1,max(df["num_bedrooms"].tolist())+1))
+    plt.bar(room,room_count,color="green")
+    plt.xlabel("Number of rooms")
+    plt.ylabel("Total Availabe Property")
+    plt.title("Property's with available rooms")
+    plt.show()
+if __name__ == 'streamlit_app.py':
+    main()
