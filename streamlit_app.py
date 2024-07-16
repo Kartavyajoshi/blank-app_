@@ -14,7 +14,7 @@ df = pd.read_csv(file_path)
 # Features and target variable
 X = df[['num_bedrooms', 'num_bathrooms', 'square_footage', 'age_of_house']]
 y = df[['house_price']]  # Assuming the target column is named 'price'
-print(df)
+# print(df)
 # Split the data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
