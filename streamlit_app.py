@@ -41,10 +41,11 @@ def predict_price(bedrooms, bathrooms, square_footage, age):
 st.title('House Price Prediction')
 
 # Input fields
-bedrooms = st.number_input('Enter the number of bedrooms:', min_value=1, max_value=10, value=3)
-bathrooms = st.number_input('Enter the number of bathrooms:', min_value=1, max_value=10, value=2)
-square_footage = st.number_input('Enter the square footage:', min_value=300, max_value=10000, value=1500)
-age = st.number_input('Enter the age of the house:', min_value=0, max_value=100, value=20)
+bedrooms = st.number_input('Enter the number of bedrooms you need :', min_value=1, max_value=10, value=3)
+bathrooms = st.number_input('Enter the number of bathrooms you need :', min_value=1, max_value=10, value=2)
+square_footage = st.number_input('Enter the square footage you need :', min_value=300, max_value=10000, value=1500)
+age = st.number_input('Enter the age of the house :', min_value=0, max_value=100, value=20)
+
 
 # Predict button
 if st.button('Predict House Price'):
