@@ -49,4 +49,4 @@ age = st.number_input('Enter the age of the house:', min_value=0, max_value=100,
 # Predict button
 if st.button('Predict House Price'):
     price = predict_price(bedrooms, bathrooms, square_footage, age)
-    st.write(f'Predicted House Price: ${price}')
+    st.write(f'Predicted House Price:  {int (price*80)} ₹')
